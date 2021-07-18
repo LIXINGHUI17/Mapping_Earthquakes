@@ -34,14 +34,13 @@ let torontoHoods = "https://raw.githubusercontent.com/LIXINGHUI17/Mapping_Earthq
 
 
 // Grabbing our GeoJSON data.
-d3.json(torontoHOOD).then(function(data) {
+d3.json(torontoHoods).then(function(data) {
   console.log(data);
 // Creating a GeoJSON layer with the retrieved data.
-L.geoJson(data, {
-  style: myStyle,
-  onEachFeature: function(feature, layer) {
-  console.log(layer);
-  layer.bindPopup("<h3>Neighborhood: "+ layer.feature.properties.AREA_NAME + "</h3>");
+  L.geoJson(data, {
+    onEachFeature: function(feature, layer) {
+    console.log(layer);
+    layer.bindPopup("<h3>Neighborhood: "+ layer.feature.properties.AREA_NAME + "</h3>");
   }
 }).addTo(map);
 })
