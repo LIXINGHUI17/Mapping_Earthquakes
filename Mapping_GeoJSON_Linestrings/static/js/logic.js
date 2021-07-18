@@ -22,14 +22,14 @@ let baseMaps = {
 let map = L.map('mapid', {
   center: [44.0, -80.0],
   zoom: 2,
-  layers: [streets]
+  layers: [light]
 })
 
 // Pass our map layers into our layers control and add the layers control to the map.
 L.control.layers(baseMaps).addTo(map);
 
 // Accessing the airport GeoJSON URL
-let torontoData = "https://raw.githubusercontent.com/LIXINGHUI17/Mapping_Earthquakes/Mapping_GeoJSON_Linestrings/Mapping_GeoJSON_Linerstrings/torontoRoutes.json";
+let torontoData = "https://raw.githubusercontent.com/LIXINGHUI17/Mapping_Earthquakes/Mapping_GeoJSON_LineStrings/Mapping_GeoJSON_Linestrings/torontoRoutes.json";
 
 // Grabbing our GeoJSON data.
 d3.json(torontoData).then(function(data) {
